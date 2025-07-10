@@ -24,13 +24,15 @@ Supports built-in commands, pipes, redirections, and more.
 This project implements a simple shell in C that mimics basic shell behavior.
 The core stages are:
 
-1. **Lexical Analysis (Lexer / Tokenization)**
+### 1. **Lexical Analysis (Lexer / Tokenization)**
    The input line is split into **tokens** like words, pipes, and redirections.
 
    **Example:**
    ```bash
    cat < input.txt | grep "hello" | sort -r > output.txt
+   ```
 
+   ```bash
 [TOKEN_WORD: "cat"]
 [TOKEN_REDIRECT_IN: "<"]
 [TOKEN_WORD: "input.txt"]
@@ -42,6 +44,7 @@ The core stages are:
 [TOKEN_WORD: "-r"]
 [TOKEN_REDIRECT_OUT: ">"]
 [TOKEN_WORD: "output.txt"]
+   ```
 
 2. **Syntax Validation**
 After tokenization, the tokens are validated to ensure they form a correct command.
@@ -53,7 +56,7 @@ cat < input.txt | grep "hello"
 
 ❌ Invalid examples:
    ```bash
-\> 
+> 
 minishell: syntax error near unexpected token '>'
 cat <
 minishell: syntax error near unexpected token '>'
@@ -61,7 +64,7 @@ minishell: syntax error near unexpected token '>'
 minishell: syntax error near unexpected token '|'
 cat | |  
 minishell: syntax error near unexpected token '|'
-echo "blablabla  
+echo "blablabla`  
 minishell: syntax error: unclosed quotes
    ```
 
