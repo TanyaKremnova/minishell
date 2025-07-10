@@ -6,19 +6,19 @@ Supports built-in commands, pipes, redirections, and more.
 
 ## ⚙️ 🛠️ Features
 - Command execution with PATH resolution
-- Built-in commands: \`echo\`, \`cd\`, \`pwd\`, \`export\`, \`unset\`, \`env\`, \`exit\`
+- Built-in commands: `echo` `cd` `pwd` `export` `unset` `env` `exit`
 - Pipes `|`
-- Redirections `>, <, >>, <<`
+- Redirections `> < >> <<`
 - Proper signal handling (Ctrl+C, Ctrl+\, Ctrl+D)
 - Environment variable expansion `$`
 - Last exit status `$?`
 - Quote parsing ("..." and '...')
 
 ## 📂 Project Structure
-- \`src/\`: Source files
-- \`include/\`: Header files
-- \`libft/\`: Custom library functions
-- \`Makefile\`: Build instructions
+- `src/`: Source files
+- `include/`: Header files
+- `libft/`: Custom library functions
+- `Makefile`: Build instructions
 
 ## 🗂️ How It Works
 This project implements a simple shell in C that mimics basic shell behavior.
@@ -31,7 +31,7 @@ The core stages are:
    ```bash
    cat < input.txt | grep "hello" | sort -r > output.txt
 
-[TOKEN_WORD: "cat"] 
+[TOKEN_WORD: "cat"]
 [TOKEN_REDIRECT_IN: "<"]
 [TOKEN_WORD: "input.txt"]
 [TOKEN_PIPE: "|"]
@@ -47,12 +47,12 @@ The core stages are:
 After tokenization, the tokens are validated to ensure they form a correct command.
 
 ✅ Valid:
-\`\`\`bash
+   ```bash
 cat < input.txt | grep "hello"
-\`\`\`
+   ```
 
 ❌ Invalid examples:
-\`\`\`bash
+   ```bash
 \> 
 minishell: syntax error near unexpected token '>'
 cat <
@@ -63,16 +63,17 @@ cat | |
 minishell: syntax error near unexpected token '|'
 echo "blablabla  
 minishell: syntax error: unclosed quotes
-\`\`\`
+   ```
 
 3. **AST Construction (Abstract Syntax Tree)**
 Valid tokens are converted into an AST (tree structure) that represents the execution pipeline.
 
 Example AST for:
-\`\`\`bash
+   ```bash
 cat < input.txt | grep hello | sort -r > output.txt
-\`\`\`
+   ```
 
+   ```bash
 parse_pipeline("cat < input.txt | grep hello | sort -r > output.txt")
     ├── parse_command("cat < input.txt")  -> AST_CMD(cat)
     │   ├── Redirection: < input.txt
@@ -81,8 +82,10 @@ parse_pipeline("cat < input.txt | grep hello | sort -r > output.txt")
         ├── parse_pipeline("sort -r > output.txt")
             ├── parse_command("sort -r")  -> AST_CMD(sort -r)
             ├── Redirection: > output.txt
+   ```
 
 Final AST:
+   ```bash
 Node Type: AST_PIPE (|)
   ├── Node Type: AST_PIPE (|)
   │     ├── Node Type: AST_CMD
@@ -95,12 +98,13 @@ Node Type: AST_PIPE (|)
         ├── Arg: sort
         ├── Arg: -r
         ├── Redirection: > output.txt
+   ```
 
 ## ✅ How to Run
-\`\`\`bash
+   ```bash
 make
 ./minishell
-\`\`\`
+   ```
 
 ## 👩🏻‍💻👩🏻‍💻 Authors
 - Tanya Kremnova ([@TanyaKremnova](https://github.com/TanyaKremnova))
