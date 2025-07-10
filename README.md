@@ -1,5 +1,9 @@
 # 🐚 Minishell
 
+## ⚠️ License
+This project does not have an open source license.  
+It is published for educational purposes only — please do not reuse or submit this code as your own work.
+
 ## ℹ️ About
 A simple shell written in C for the 42 school project.
 Supports built-in commands, pipes, redirections, and more.
