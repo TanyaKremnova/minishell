@@ -46,7 +46,7 @@ The core stages are:
 [TOKEN_WORD: "output.txt"]
    ```
 
-2. **Syntax Validation**
+### 2. **Syntax Validation**
 After tokenization, the tokens are validated to ensure they form a correct command.
 
 ✅ Valid:
@@ -64,14 +64,14 @@ minishell: syntax error near unexpected token '>'
 minishell: syntax error near unexpected token '|'
 cat | |  
 minishell: syntax error near unexpected token '|'
-echo "blablabla`  
+echo "blablabla  
 minishell: syntax error: unclosed quotes
    ```
 
-3. **AST Construction (Abstract Syntax Tree)**
+### 3. **AST Construction (Abstract Syntax Tree)**
 Valid tokens are converted into an AST (tree structure) that represents the execution pipeline.
 
-Example AST for:
+**Example AST for:**
    ```bash
 cat < input.txt | grep hello | sort -r > output.txt
    ```
@@ -87,7 +87,7 @@ parse_pipeline("cat < input.txt | grep hello | sort -r > output.txt")
             ├── Redirection: > output.txt
    ```
 
-Final AST:
+**Final AST:**
    ```bash
 Node Type: AST_PIPE (|)
   ├── Node Type: AST_PIPE (|)
