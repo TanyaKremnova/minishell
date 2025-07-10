@@ -8,14 +8,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3 -O0
 RNFLAGS = -lreadline -lncurses 
 
-# L
-# CFLAGS = -Wall -Wextra -Werror -g3 -I/opt/homebrew/opt/readline/include -I./include
-# RNFLAGS = -L/opt/homebrew/opt/readline/lib -lreadline -lncurses
-
-# T
-# CFLAGS = -Wall -Wextra -Werror -g3 -I/usr/local/opt/readline/include -I./include
-# RNFLAGS = -L/usr/local/opt/readline/lib -lreadline -lncurses
-
 HEADERS = -I./include
 
 LEXER_DIR = src/lexer

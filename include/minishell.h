@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkremnov <tkremnov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tanya <tanya@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 10:21:15 by tkremnov          #+#    #+#             */
-/*   Updated: 2025/07/04 09:48:12 by tkremnov         ###   ########.fr       */
+/*   Updated: 2025/07/10 11:54:26 by tanya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,6 @@
 // 95 / (105)→ Bright Magenta
 // 96 / (106)→ Bright Cyan
 // 97 / (107)→ Bright White
-
-// # define malloc my_malloc //TODO delete
-// void	*my_malloc(size_t size);  //TODO delete
-// void	set_malloc_fail(int fail_number);  //TODO delete
 
 # define BOLD_MAG "\001\033[1;35m\002"
 # define BOLD_GRAY "\001\033[1;90m\002"
