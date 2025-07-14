@@ -115,4 +115,4 @@ make
 
 ## 👩🏻‍💻👩🏻‍💻 Authors
 - Tanya Kremnova ([@TanyaKremnova](https://github.com/TanyaKremnova))
-- Lidiia Perekhrest
+- Lidiia Perekhrest ([@Lidiia Perekhrest](https://github.com/Lidiia-P))
